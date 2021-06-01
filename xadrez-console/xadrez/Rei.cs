@@ -1,6 +1,6 @@
 ﻿using tabuleiro;
 
-
+//TODO DESCRIÇÃO NA CLASSE TODA
 namespace xadrez
 {
     class Rei : Peca

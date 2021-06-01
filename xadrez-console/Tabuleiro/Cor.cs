@@ -1,5 +1,6 @@
 ﻿namespace tabuleiro
 {
+    //Enumeração de escolha de cor
     enum Cor
     {
         Branca,

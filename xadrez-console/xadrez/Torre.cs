@@ -1,8 +1,10 @@
 ﻿using tabuleiro;
 using System;
 
+//TODO DESCRIÇÃO NA CLASSE TODA
 namespace xadrez
 {
+
     class Torre : Peca
     {
         public Torre(Tabuleiro tab, Cor cor) : base(tab, cor) { }
