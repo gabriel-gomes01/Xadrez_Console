@@ -16,9 +16,21 @@ namespace xadrez_console
             Console.WriteLine();
             imprimirPecasCapturadas(partida);
             Console.WriteLine();
+            if (!partida.terminada)
+            {
+                Console.WriteLine("\nTurno: " + partida.turno);
+                Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
 
-            Console.WriteLine("\nTurno: " + partida.turno);
-            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                if (partida.xeque)
+                {
+                    Console.WriteLine("XEQUE!!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine("Vencedor: " + partida.jogadorAtual);
+            }
 
         }
 
@@ -26,7 +38,7 @@ namespace xadrez_console
         {
             Console.WriteLine("Peças Capturadas: ");
             Console.Write("Brancas:");
-            
+
             imprimirConjuntos(partida.pecasCapturadas(Cor.Branca));
 
             Console.Write("\nPretas:");
@@ -35,7 +47,7 @@ namespace xadrez_console
         public static void imprimirConjuntos(HashSet<Peca> conjunto)
         {
             Console.Write("[");
-            foreach(Peca x in conjunto)
+            foreach (Peca x in conjunto)
             {
                 Console.Write(x + " ");
             }
@@ -44,12 +56,12 @@ namespace xadrez_console
 
         public static void imprimirTabuleiro(Tabuleiro tab)
         {
-            for(int i =0; i <tab.linhas; i++)
+            for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
-                for(int j = 0; j < tab.colunas; j++)
-                {                   
-                        Tela.imprimirPeca(tab.peca(i, j));             
+                for (int j = 0; j < tab.colunas; j++)
+                {
+                    Tela.imprimirPeca(tab.peca(i, j));
                 }
 
                 Console.WriteLine();
@@ -69,7 +81,7 @@ namespace xadrez_console
                 Console.Write(8 - i + " ");
                 for (int j = 0; j < tab.colunas; j++)
                 {
-                    if (possicoesPossiveis[i,j])
+                    if (possicoesPossiveis[i, j])
                     {
                         Console.BackgroundColor = fundoAlterado;
                     }
