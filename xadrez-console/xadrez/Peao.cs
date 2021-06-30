@@ -59,7 +59,7 @@ namespace xadrez
                     mat[pos.linha, pos.coluna] = true;
                 }
 
-                /* #jogadaespecial en passant
+                // #jogadaespecial en passant
                 if (posicao.linha == 3)
                 {
                     Posicao esquerda = new Posicao(posicao.linha, posicao.coluna - 1);
@@ -72,7 +72,7 @@ namespace xadrez
                     {
                         mat[direita.linha - 1, direita.coluna] = true;
                     }
-                }*/
+                }
             }
             else
             {
@@ -98,7 +98,7 @@ namespace xadrez
                     mat[pos.linha, pos.coluna] = true;
                 }
 
-                /* #jogadaespecial en passant
+                // #jogadaespecial en passant
                 if (posicao.linha == 4)
                 {
                     Posicao esquerda = new Posicao(posicao.linha, posicao.coluna - 1);
@@ -111,7 +111,7 @@ namespace xadrez
                     {
                         mat[direita.linha + 1, direita.coluna] = true;
                     }
-                }*/
+                }
             }
 
             return mat;
